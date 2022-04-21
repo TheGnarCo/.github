@@ -1,0 +1,5 @@
+{
+  "name": "Gnar Yarn Lint",
+  "description": "Running Yarn Linters",
+  "categories": ["Javascript", "Typescript"]
+}

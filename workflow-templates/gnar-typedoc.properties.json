@@ -1,0 +1,5 @@
+{
+  "name": "Gnar Typedoc",
+  "description": "Generating your Typedoc Docs via PR",
+  "categories": ["Javascript"]
+}
