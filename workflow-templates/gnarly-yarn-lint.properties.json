@@ -1,0 +1,5 @@
+{
+  "name": "Gnarly Yarn Lint",
+  "description": "Pointing out Gnarly formatting errors",
+  "categories": ["Javascript", "Typescript"]
+}

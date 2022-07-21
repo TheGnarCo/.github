@@ -1,9 +1,9 @@
-name: Gnar Yarn Lint
+name: Yarn Lint
 on:
+  pull_request_target:
   push:
-    branches: [$default-branch]
-  pull_request:
-    branches: [$default-branch]
+    branches: [ $default-branch ]
+
 jobs:
   build:
     name: Lint

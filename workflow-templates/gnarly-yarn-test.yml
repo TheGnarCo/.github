@@ -1,9 +1,9 @@
-name: Gnar Yarn Test CI
+name: Yarn Test
 on:
+  pull_request_target:
   push:
     branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+
 jobs:
   build:
     name: Yarn Test

@@ -1,0 +1,5 @@
+{
+  "name": "Gnarly Rails Tests",
+  "description": "Running your Gnarly Specs",
+  "categories": ["Ruby", "Javascript", "Typescript"]
+}

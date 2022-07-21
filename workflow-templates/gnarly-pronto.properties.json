@@ -1,0 +1,5 @@
+{
+  "name": "Gnarly Pronto",
+  "description": "Gnarly Code analysis and commentary from our own JortsCat",
+  "categories": ["Ruby", "Pronto", "Brakeman", "Rubocop"]
+}
