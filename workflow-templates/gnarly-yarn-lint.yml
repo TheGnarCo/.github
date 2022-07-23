@@ -15,5 +15,7 @@ jobs:
           node-version: 18
           cache: 'yarn'
 
+      - run: yarn install
+
       - name: Run Linters
         run: yarn lint
