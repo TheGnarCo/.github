@@ -1,6 +1,6 @@
 name: Rails Tests
 on:
-  pull_request_target:
+  pull_request:
   push:
     branches: [ $default-branch ]
 
@@ -51,10 +51,10 @@ jobs:
         shell: bash
         run: bin/rails assets:precompile
 
-      - name: Run tests
+      - name: Run Ruby Tests
         shell: bash
         run: bundle exec rspec
 
-      - name: Run Yarn Tests
+      - name: Run JS Tests
         if: steps.check_files.outputs.files_exists == 'true'
-        run: yarn test
+        run: npm run test --if-present

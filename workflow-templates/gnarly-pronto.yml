@@ -1,24 +1,17 @@
 name: Pronto
-on: [pull_request_target]
-
+on: [ pull_request ]
 jobs:
   pronto:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      statuses: write
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
-      - name: Setup Ruby and install gems
-        uses: ruby/setup-ruby@v1
-
-      - name: Setup Pronto
-        run: gem install pronto pronto-rubocop pronto-brakeman
-
-      - name: Run Pronto
-        env:
-          PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number }}
-          PRONTO_GITHUB_SLUG: ${{ github.repository }}
-          PRONTO_GITHUB_ACCESS_TOKEN: "${{ github.token }}"
-        run: |
-          pronto run -f text github_status github_pr_review -c origin/${{ github.base_ref }}
+      - uses: HeRoMo/pronto-action@v1.35.0
+        with:
+          github_token: ${{ secrets.GNARBOT_TOKEN }}
+          runner: rubocop brakeman rails_best_practices
+          formatters: text github_status github_pr_review
